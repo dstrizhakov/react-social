@@ -1,31 +1,23 @@
 import React from 'react';
-import style from './Content.module.css';
-import Posts from './Posts/Posts';
+import style from './Dialogs.module.css';
+import DialogItem from "./DialogItem/DialogItem";
+import Message from "./Message/Message";
 
-const Content = () => {
+const Dialogs = (props) => {
+
+	let dialogsElement = props.state.dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id} avatar={dialog.avatar}/>);
+	let MessagesElement = props.state.messagesData.map(message => <Message message = {message.message} isMyMessage = {message.isMyMessage}/>);
 	return (
-		<div className={style.content}>
-			<div className={style.image}>
-				<img src="http://tutfon.ru/wallpapers/image.raw?view=image&type=orig&id=9915" alt='image'></img>
+		<div className={style.dialogs}>
+			<div className={style.dialogsItem}>
+				{dialogsElement}
 			</div>
-			<div className={style.data}>
-				<div className={style.avatar}>
-					<img src="https://android-obzor.com/wp-content/uploads/2022/02/5-1.jpg" alt="" />
-				</div>
-				<div className={style.info}>
-					<div className={style.name}>
-						Arina
-					</div>
-					<div className={style.city}>
-						Taganrog
-					</div>
-				</div>
+			<div className={style.messages}>
+				{MessagesElement}
 			</div>
-			<Posts />
 		</div>
-
 	);
 }
 
 
-export default Content;
+export default Dialogs;

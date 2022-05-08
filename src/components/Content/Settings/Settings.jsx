@@ -1,16 +1,16 @@
 import React from 'react';
-import style from './News.module.css';
+import style from './Settings.module.css';
 
 
 
-const News = () => {
+const Settings = () => {
 	return (
 		<div>
-	News
+	Settings
 		</div>
 
 	);
 }
 
 
-export default News;
+export default Settings;
