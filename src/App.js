@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import Content from './components/Content/Content';
 import Footer from './components/Footer/Footer';
 import {BrowserRouter} from "react-router-dom";
+import store from "./redux/state";
 
 
 
@@ -17,8 +18,7 @@ const App = (props) => {
         <Navbar state={props.state.sideBar}/>
         <Content
             state={props.state}
-            addPost={props.addPost}
-            updateNewPostText={props.updateNewPostText}
+            dispatch={props.dispatch}
         />
         <Footer />
     </div>
