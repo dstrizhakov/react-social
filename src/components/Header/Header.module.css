@@ -1,0 +1,38 @@
+.header {
+	grid-area: h;
+	background-color:rgb(255, 255, 255);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgb(242, 240, 240); 
+	border-left: 1px solid rgb(218, 198, 152);
+	border-right: 1px solid rgb(218, 198, 152);
+}
+.image {
+	width: 20px;
+	padding: 10px;
+	margin: 0px 10px;
+	overflow: hidden;
+	border-radius: 50%;
+	background-color: #fff;
+}
+.header img {
+	width: 100%;
+	object-fit: cover;
+	
+}
+.menu {
+	margin: 0px 10px;
+	display: flex;
+}
+.menu a {
+	color: rgb(25, 25, 26);
+	text-decoration: none;
+	padding: 0px 5px;
+}
+.item {
+	color: rgb(0, 0, 0);
+}
+.item  a{
+	color: inherit;
+}
