@@ -5,6 +5,9 @@ import avatar04 from './Avatars/4.jpg'
 import avatar05 from './Avatars/5.jpg'
 import avatar06 from './Avatars/6.jpg'
 
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
 let store ={
     _state: {
         dialogsPage: {
@@ -24,9 +27,30 @@ let store ={
         },
         profilePage: {
             postsData: [
-                {id: 1, message: "Hi, it's my first post!", likeCount: 11},
-                {id: 2, message: "Hi, how are you?", likeCount: 16},
-                {id: 3, message: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.", likeCount: 65},
+                {id: 1, message: "Метод bind() создаёт новую функцию, которая при вызове устанавливает в качестве контекста выполнения this предоставленное значение. В метод также передаётся набор аргументов, которые будут установлены перед переданными в привязанную функцию аргументами при её вызове.", likeCount: 11},
+                {id: 2, message: "Что бы обновить store необходимо вызвать метод dispatch(). Он вызывается у объекта store который вы создаёте в store.js. Этот объект принято называть store поэтому обновление состояния в моём случае выглядит так:\n" +
+                        "\n" +
+                        "store.dispatch({ type: ACTION_1, value_1: \"Some text\" });\n" +
+                        "\n" +
+                        "ACTION_1 это константа события о которой речь пойдет дальше (см. Actions).\n" +
+                        "\n" +
+                        "Эта функция вызовет функцию reducer который обработает событие и обновит соответствующие поля хранилища.", likeCount: 16},
+                {id: 3, message: "На самом деле передавать объект события напрямую в dispatch() является признаком плохого тона. Для этого нужно использовать функцию под названием actionCreator. Она делает ровно то что и ожидается. Создаёт событие! Вызов этой функции нужно передавать как аргумент в dispatch а в actionCreator передавать необходимое значение (value). Базовый actionCreator выглядит следующим образом:\n" +
+                        "\n" +
+                        "function action_1(value) {\n" +
+                        "    return { \n" +
+                        "        type: ACTION_1,\n" +
+                        "        value_1: value\n" +
+                        "    };\n" +
+                        "}\n" +
+                        "\n" +
+                        "export default action_1;\n" +
+                        "\n" +
+                        "Таким образом вызов dispatch должен выглядеть так:\n" +
+                        "\n" +
+                        "store.dispatch(action_1(\"Some value\"));\n" +
+                        "\n" +
+                        "С использованием actionCreator код становится более чистым.", likeCount: 65},
             ],
             newPostText: ''
         },
@@ -67,5 +91,16 @@ let store ={
     }
 }
 
+export const addPostActionCreator = () => {
+    return {
+        type: ADD_POST
+    }
+}
+export const updateNewPostTextActionCreator = (text) => {
+    return {
+        type: UPDATE_NEW_POST_TEXT,
+        newText: text
+    }
+}
 export default store;
 window.store = store;

@@ -15,6 +15,10 @@ const Dialogs = (props) => {
 			<div className={style.messages}>
 				{MessagesElement}
 			</div>
+			<div className={style.input}>
+				<textarea   rows="1"/>
+				<button>Send</button>
+			</div>
 		</div>
 	);
 }
