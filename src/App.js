@@ -19,6 +19,7 @@ const App = (props) => {
         <Content
             state={props.state}
             dispatch={props.dispatch}
+            store={props.store}
         />
         <Footer />
     </div>
