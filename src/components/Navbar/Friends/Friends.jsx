@@ -12,8 +12,6 @@ const Friends = (props) => {
                 {dialogsElement}
             </div>
         </div>
-
-
     );
 }
 export default Friends;

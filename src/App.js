@@ -5,7 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import Content from './components/Content/Content';
 import Footer from './components/Footer/Footer';
 import {BrowserRouter} from "react-router-dom";
-import store from "./redux/state";
+
 
 
 
