@@ -17,8 +17,8 @@ const App = (props) => {
         <Header />
         <Navbar state={props.state.sideBar}/>
         <Content
-            state={props.state}
-            dispatch={props.dispatch}
+            /*state={props.state}
+            dispatch={props.dispatch}*/
             store={props.store}
         />
         <Footer />

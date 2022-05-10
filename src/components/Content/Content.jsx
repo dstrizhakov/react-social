@@ -7,6 +7,7 @@ import {BrowserRouter, Route, Routes, Switch} from "react-router-dom";
 import News from "./News/News";
 import Music from "./Music/Music";
 import Settings from "./Settings/Settings";
+import DialogsContainer from "../Dialogs/DialogsContainer";
 
 
 
@@ -14,8 +15,8 @@ const Content = (props) => {
 	return (
 	<div className={style.content}>
 <Routes>
-	<Route path='/profile' element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>} />
-	<Route path='/dialog/*' element={<Dialogs store={props.store} />}/>
+	<Route path='/profile' element={<Profile store={props.store} />} />
+	<Route path='/dialog/*' element={<DialogsContainer store={props.store} />}/>
 	<Route path='/news' element={<News/>}/>
 	<Route path='/music' element={<Music/>}/>
 	<Route path='/settings' element={<Settings/>}/>
