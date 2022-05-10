@@ -8,9 +8,9 @@ const Header = () => {
 				<img src="https://geniusmarketing.me/wp-content/uploads/2016/05/twitter.jpg" alt=""></img>
 			</div>
 			<div className={style.menu}>
-				<div className={style.item}><a href="#">Profile</a></div>
-				<div className={style.item}><a href="#">Settings</a></div>
-				<div className={style.item}><a href="#">Logout</a></div>
+				<div className={style.item}><a href="#">Help</a></div>
+				<div className={style.item}><a href="#">Sing in</a></div>
+				<div className={style.item}><a href="#">Login</a></div>
 			</div>
 		</header>
 	);

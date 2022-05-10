@@ -1,7 +1,8 @@
 .app-wrapper {
+    overflow: hidden;
 margin: 0 auto;
 max-width: 1280px;
-min-height: 100vh;
+height: 100vh;
 display: grid;
 grid-template-rows: 50px 1fr 50px;
 grid-template-columns: 1fr 5fr;

@@ -22,13 +22,14 @@
 	
 }
 .menu {
-	margin: 0px 10px;
+	margin: 0px 15px;
 	display: flex;
 }
 .menu a {
 	color: rgb(25, 25, 26);
 	text-decoration: none;
-	padding: 0px 5px;
+	padding: 0px 10px;
+	font-size: 18px;
 }
 .item {
 	color: rgb(0, 0, 0);

@@ -12,18 +12,17 @@ import {BrowserRouter} from "react-router-dom";
 const App = (props) => {
 
   return (
-<BrowserRouter>
+
     <div className='app-wrapper'>
         <Header />
-        <Navbar state={props.state.sideBar}/>
+        <Navbar/>
         <Content
             /*state={props.state}
             dispatch={props.dispatch}*/
-            store={props.store}
+            /*store={props.store}*/
         />
         <Footer />
     </div>
-</BrowserRouter>
 
 
 
