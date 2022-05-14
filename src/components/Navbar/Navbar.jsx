@@ -14,6 +14,9 @@ const Navbar = (props) => {
 					<NavLink to='/dialog' className={({isActive}) => isActive ? `${style.active}` : ''}>Messages</NavLink>
 				</div>
 				<div className={style.item}>
+					<NavLink to='/users' className={({isActive}) => isActive ? `${style.active}` : ''}>Users</NavLink>
+				</div>
+				<div className={style.item}>
 					<NavLink to='/news' className={({isActive}) => isActive ? `${style.active}` : ''}>News</NavLink>
 				</div>
 				<div className={style.item}>
@@ -22,6 +25,7 @@ const Navbar = (props) => {
 				<div className={style.item}>
 					<NavLink to='/settings' className={({isActive}) => isActive ? `${style.active}` : ''}>Settings</NavLink>
 				</div>
+
 			</nav>
 			{/*{<Friends state = {props.state.friends}/>}*/}
 		</div>
