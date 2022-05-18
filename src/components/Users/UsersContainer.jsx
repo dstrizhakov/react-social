@@ -7,7 +7,7 @@ import {
     setUsersTotalCountAC,
     unfollowAC
 } from "../../redux/users-reducer";
-import Users from "./Users";
+import UsersAPIComponent from "./UsersAPIComponent";
 
 let mapStateToProps = (state) => {
 return{
@@ -37,4 +37,4 @@ return {
 }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (Users);
+export default connect(mapStateToProps, mapDispatchToProps) (UsersAPIComponent);
