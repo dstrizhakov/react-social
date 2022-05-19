@@ -12,7 +12,7 @@ let Users = (props) => {
     }
 
     return <div className={style.main}>
-        <div className={style.pages}>
+       <div className={style.pages}>
             {pages.map(p => {
                 return <span className={props.currentPage === p && style.selectedPage}
                              onClick={(e) => {
@@ -41,8 +41,8 @@ let Users = (props) => {
                     <div>{u.status}</div>
                 </div>
                 <div>
-                    <div>{"u.location.country"}</div>
-                    <div>{"u.location.cityname"}</div>
+                   {/* <div>{"u.location.country"}</div>
+                    <div>{"u.location.cityname"}</div>*/}
                 </div>
             </div>
         </div>)
