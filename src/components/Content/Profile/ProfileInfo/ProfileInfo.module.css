@@ -39,3 +39,7 @@
 	font-weight: 700;
 	font-size: 24px;
 }
+.contacts{
+	display: flex;
+	flex-direction: column;
+}
