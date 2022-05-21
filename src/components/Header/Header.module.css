@@ -37,3 +37,15 @@
 .item  a{
 	color: inherit;
 }
+.loginBlock{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.loginBlock img{
+	width: 40px;
+	height: 40px;
+}
+.userImage{
+
+}

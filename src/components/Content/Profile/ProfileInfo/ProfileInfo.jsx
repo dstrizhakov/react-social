@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './ProfileInfo.module.css';
 import Preloader from "../../../common/Preloader/Preloader";
+import userPhoto from "../../../../assets/img/user.png";
 
 
 const ProfileInfo = (props) => {
@@ -14,7 +15,11 @@ const ProfileInfo = (props) => {
             </div>
             <div className={style.data}>
                 <div className={style.avatar}>
-                    <img src={props.profile.photos.large}/>
+                    { props.profile.photos.large
+                    ? <img src={props.profile.photos.large} alt="Ой, картинки нет"/>
+                    : <img src={userPhoto} alt="Ой, картинки нет"/>
+                    }
+                   {/* <img src={props.profile.photos.large}/>*/}
                     {/*<img src="https://android-obzor.com/wp-content/uploads/2022/02/5-1.jpg" alt=""/>*/}
                 </div>
                 <div className={style.info}>
