@@ -15,7 +15,7 @@ const Content = (props) => {
 	return (
 	<div className={style.content}>
 <Routes>
-	<Route path='/profile/*' element={<ProfileContainer />} />
+	<Route path='/profile/:id' element={<ProfileContainer />}/>
 	<Route path='/dialog/*' element={<DialogsContainer store={props.store} />}/>
 	<Route path='/news' element={<News/>}/>
 	<Route path='/users' element={<UsersContainer/>}/>

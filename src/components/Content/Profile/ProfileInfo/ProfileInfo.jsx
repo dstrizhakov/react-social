@@ -31,14 +31,21 @@ const ProfileInfo = (props) => {
                     <div className={style.contacts}>
                         <div>Контакты:</div>
                         <a href= {props.profile.contacts.facebook} >{props.profile.contacts.facebook}</a>
-                        <span>{props.profile.contacts.facebook ? props.profile.contacts.facebook : null}</span>
+                        <a href= {props.profile.contacts.website} >{props.profile.contacts.website}</a>
+                        <a href= {props.profile.contacts.vk} >{props.profile.contacts.vk}</a>
+                        <a href= {props.profile.contacts.twitter} >{props.profile.contacts.twitter}</a>
+                        <a href= {props.profile.contacts.instagram} >{props.profile.contacts.instagram}</a>
+                        <a href= {props.profile.contacts.youtube} >{props.profile.contacts.youtube}</a>
+                        <a href= {props.profile.contacts.github} >{props.profile.contacts.github}</a>
+                        <a href= {props.profile.contacts.mainLink} >{props.profile.contacts.mainLink}</a>
+                        {/*<span>{props.profile.contacts.facebook ? props.profile.contacts.facebook : null}</span>
                         <span>{props.profile.contacts.website ? props.profile.contacts.website : null}</span>
                         <span>{props.profile.contacts.vk ? props.profile.contacts.vk : null}</span>
                         <span>{props.profile.contacts.twitter ? props.profile.contacts.twitter : null}</span>
                         <span>{props.profile.contacts.instagram ? props.profile.contacts.instagram : null}</span>
                         <span>{props.profile.contacts.youtube ? props.profile.contacts.youtube : null}</span>
                         <span>{props.profile.contacts.github ? props.profile.contacts.github : null}</span>
-                        <span>{props.profile.contacts.mainLink ? props.profile.contacts.mainLink : null}</span>
+                        <span>{props.profile.contacts.mainLink ? props.profile.contacts.mainLink : null}</span>*/}
                     </div>
                 </div>
             </div>

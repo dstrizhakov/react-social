@@ -14,9 +14,9 @@
 	background-color: rgb(255, 255, 255);
 }
 .avatar {
-	width: 100px;
-	flex: 0 0 100px;
-	height: 100px;
+	width: 200px;
+	flex: 0 0 200px;
+	height: 200px;
 	padding: 0px;
 	margin: 0px 20px 0px 0px;
 	overflow: hidden;
