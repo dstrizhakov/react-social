@@ -22,7 +22,16 @@
 .status{
 	margin: 10px 0px;
 	height: 20px;
-	background-color: deepskyblue;
+	padding: 10px;
+}
+.status input {
+	padding: 5px 10px;
+	font-size: 18px;
+}
+.status span {
+	padding: 25px 10px;
+	font-size: 18px;
+	font-weight: 700;
 }
 .avatar {
 	width: 300px;
