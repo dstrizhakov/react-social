@@ -17,7 +17,7 @@ const Dialogs = (props) => {
 let body = e.target.value;
 props.updateNewMessageBody(body);
 	}
-
+	/*if (!props.isAuth) return <Navigate replace to="/login" />;*/
 	return (
 		<div className={style.dialogs}>
 			<div className={style.dialogsItem}>

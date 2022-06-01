@@ -1,10 +1,9 @@
 .header {
 	grid-area: h;
-	background-color:rgb(255, 255, 255);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: rgb(242, 240, 240); 
+	background-color: aliceblue;
 	border-left: 1px solid rgb(218, 198, 152);
 	border-right: 1px solid rgb(218, 198, 152);
 }

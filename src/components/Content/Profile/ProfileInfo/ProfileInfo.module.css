@@ -13,6 +13,17 @@
 	display: flex;
 	background-color: rgb(255, 255, 255);
 }
+.statusArea{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.status{
+	margin: 10px 0px;
+	height: 20px;
+	background-color: deepskyblue;
+}
 .avatar {
 	width: 300px;
 	flex: 0 0 300px;
