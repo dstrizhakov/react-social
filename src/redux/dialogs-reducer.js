@@ -5,7 +5,7 @@ import avatar04 from "./Avatars/4.jpg";
 import avatar05 from "./Avatars/5.jpg";
 import avatar06 from "./Avatars/6.jpg";
 
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+
 const SEND_MESSAGE = 'SEND-MESSAGE';
 let initialState = {
     dialogsData: [
@@ -20,25 +20,19 @@ let initialState = {
         {id: 1, message: "Hi!", isMyMessage: true,},
         {id: 2, message: "How are you?", isMyMessage: false,},
         {id: 3, message: "Yo", isMyMessage: true,}
-    ],
-    newMessageBody: "it"
+    ]
 };
 
 const dialogsReducer = (state = initialState, action) =>{
 
 
     switch (action.type){
-        case UPDATE_NEW_MESSAGE_BODY:
-            return  {
-                ...state,
-                newMessageBody:action.body
-            };
+
         case SEND_MESSAGE:
-            let body = state.newMessageBody;
+            let body = action.newMessageBody;
             let lastId = state.messagesData.length
             return  {
                 ...state,
-                newMessageBody: '',
                 messagesData:[...state.messagesData, {id: lastId, message: body, isMyMessage: true,}]
             };
         default:
@@ -46,7 +40,6 @@ const dialogsReducer = (state = initialState, action) =>{
     }
 }
 
-export const sendMessageCreator = () => ({type: SEND_MESSAGE})
-export const updateNewMessageBodyCreator = (body) => ({type: UPDATE_NEW_MESSAGE_BODY, body: body})
+export const sendMessageCreator = (newMessageBody) => ({type: SEND_MESSAGE, newMessageBody})
 
 export default dialogsReducer;

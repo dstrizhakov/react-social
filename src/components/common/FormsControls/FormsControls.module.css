@@ -1,0 +1,11 @@
+.formControl{
+}
+.formControl.error input,
+.formControl.error textarea{
+    box-shadow: 0px 0px 5px red;
+}
+.formControl.error span{
+    font-family: Arial;
+    font-size: 12px;
+   color: red;
+}

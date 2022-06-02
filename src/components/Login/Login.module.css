@@ -1,0 +1,33 @@
+.wrapper{
+	position: absolute;
+	top:40%;
+	left:45%;
+	z-index: 3;
+	background-color: azure;
+	padding: 20px 80px;
+	border: 1px solid tan;
+	border-radius: 10px;
+	font-size: 18px;
+}
+.wrapper input{
+padding: 5px;
+	margin: 5px 0px;
+}
+.wrapper button{
+	padding: 5px 20px;
+	margin: 5px 0px;
+	font-size: 18px;
+	background-color: palegreen;
+	color: green;
+	border: 1px solid green;
+	border-radius: 5px;
+	transition: all 0.2s ease 0s;
+}
+.wrapper button:hover{
+	box-shadow: 0px 0px 3px black;
+
+}
+.wrapper button:active{
+	border: 1px solid springgreen;
+	background-color: springgreen;
+}
