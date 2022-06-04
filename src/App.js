@@ -8,7 +8,7 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 
 
 
-const App = (props) => {
+const App = () => {
 
   return (
 

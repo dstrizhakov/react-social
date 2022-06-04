@@ -17,7 +17,7 @@ const Header = (props) => {
 						: <img className={style.userImage} src={userPhoto} alt="Ой, картинки нет"/>
 					}
 					{ props.isAuth
-						? props.login
+						? <div>{props.login} <button onClick={props.logout}>Logout</button></div>
 						: <NavLink to={'/login'}>Login</NavLink>
 					}
 
