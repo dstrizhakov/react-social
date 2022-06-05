@@ -1,17 +1,21 @@
 .app-wrapper {
     overflow: hidden;
-margin: 0 auto;
-max-width: 100vw;
-height: 100vh;
-display: grid;
-grid-template-rows: 50px 1fr 50px;
-grid-template-columns: 1fr 5fr;
-gap: 0px;
-grid-template-areas: 
-"h h"
-"n c"
-"f f";
+    margin: 0 auto;
+    max-width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-columns: 1fr 5fr;
+    gap: 0px;
+    grid-template-areas: "h h" "n c" "f f";
 }
 
 
-
+.content {
+    grid-area: c;
+    background-color: rgb(255, 255, 255);
+    border-left: 1px solid rgb(218, 198, 152);
+    border-right: 1px solid rgb(218, 198, 152);
+    border-top: 1px solid rgb(218, 198, 152);
+    border-bottom: 1px solid rgb(218, 198, 152);
+}

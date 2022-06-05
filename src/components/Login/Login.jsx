@@ -31,7 +31,7 @@ const Login = (props) => {
         props.login (formData.email,formData.password, formData.rememberMe);
     }
     if(props.isAuth) {
-        return <Navigate replace to="/profile" />;
+        return <Navigate replace to="/dialogs" />;
     }
     return <div className={style.wrapper}>
         <h3>Login</h3>

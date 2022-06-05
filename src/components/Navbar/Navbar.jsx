@@ -10,12 +10,12 @@ const Navbar = (props) => {
 					<NavLink to='/profile/:userId' className={({isActive}) => isActive ? `${style.active}` : ''}>Profile</NavLink>
 				</div>
 				<div className={style.item}>
-					<NavLink to='/dialog' className={({isActive}) => isActive ? `${style.active}` : ''}>Messages</NavLink>
+					<NavLink to='/dialogs' className={({isActive}) => isActive ? `${style.active}` : ''}>Messages</NavLink>
 				</div>
 				<div className={style.item}>
 					<NavLink to='/users' className={({isActive}) => isActive ? `${style.active}` : ''}>Users</NavLink>
 				</div>
-				<div className={style.item}>
+				{/*<div className={style.item}>
 					<NavLink to='/news' className={({isActive}) => isActive ? `${style.active}` : ''}>News</NavLink>
 				</div>
 				<div className={style.item}>
@@ -23,7 +23,7 @@ const Navbar = (props) => {
 				</div>
 				<div className={style.item}>
 					<NavLink to='/settings' className={({isActive}) => isActive ? `${style.active}` : ''}>Settings</NavLink>
-				</div>
+				</div>*/}
 				<div className={style.item}>
 					<NavLink to='/login' className={({isActive}) => isActive ? `${style.active}` : ''}>Login</NavLink>
 				</div>
