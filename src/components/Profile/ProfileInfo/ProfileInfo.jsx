@@ -2,7 +2,7 @@ import React from 'react';
 import style from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import userPhoto from "../../../assets/img/user.png";
-import ProfileStatus from "./ProfileStatus"
+import ProfileStatus from "./ProfileStatusWithHooks"
 
 
 const ProfileInfo = (props) => {
@@ -16,7 +16,7 @@ const ProfileInfo = (props) => {
                 <div className={style.statusArea}>
                     <div className={style.avatar}>
                         { props.profile.photos.large
-                            ? <img src={props.profile.photos.large} alt="Ой, картинки нет"/>
+                            ? <img src={props.profile.photos.large} alt="user image"/>
                             : <img src={userPhoto} alt="Ой, картинки нет"/>
                         }
                     </div>

@@ -1,0 +1,36 @@
+import React from "react";
+import style from "./Users.module.css";
+import userPhoto from "../../assets/img/user.png";
+import {NavLink} from "react-router-dom";
+
+
+let User = ({user, followingInProgress, unfollow, follow}) => {
+    return (
+        <div className={style.Container} key={user.id}>
+            <div className={style.leftCnt}>
+                <NavLink to={'/profile/' + user.id}>
+                    <div className={style.PhotoCnt}>
+                        <img src={user.photos.small != null ? user.photos.small : userPhoto} alt="ой, картинки нет"/>
+                    </div>
+                </NavLink>
+                <div className={style.buttons}>
+                    {user.followed
+                        ? <button disabled={followingInProgress.some(id => id === user.id)} className={style.unfollow}
+                                  onClick={() => {
+                                      unfollow(user.id)
+                                  }}>Unfollow</button>
+                        : <button disabled={followingInProgress.some(id => id === user.id)} className={style.follow}
+                                  onClick={() => {
+                                      follow(user.id)
+                                  }}>Follow</button>}
+                </div>
+            </div>
+            <div className={style.rightCnt}>
+                <div>
+                    <div>{user.name}</div>
+                    <div>{user.status}</div>
+                </div>
+            </div>
+        </div>)
+}
+export default User;

@@ -41,9 +41,7 @@ class App extends React.Component {
     }
 }
 const mapStateToProps = (state) => ({
-
     initialized:state.app.initialized
-
 })
 export default connect(mapStateToProps, {initializeApp}) (App);
 

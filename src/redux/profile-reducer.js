@@ -46,20 +46,20 @@ let initialState = {
     profile: null,
     status: ""
 };
-const profileReducer = (state = initialState, action) =>{
-    switch (action.type){
+const profileReducer = (state = initialState, action) => {
+    switch (action.type) {
         case ADD_POST:
             let newPost = {
                 id: 5,
                 message: action.newPostText,
                 likeCount: 0
             };
-            return  {
+            return {
                 ...state,
                 postsData: [...state.postsData, newPost],
                 newPostText: ''
             }
-            case SET_STATUS:
+        case SET_STATUS:
             return {
                 ...state,
                 status: action.status
@@ -80,23 +80,19 @@ export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 export const setStatus = (status) => ({type: SET_STATUS, status})
 
 //==============thunk-creators==============//
-export const getUserProfile = (userId) => {
-    return (dispatch) => {
-        profileAPI.getUserProfile(userId).then(data => {
-            dispatch(setUserProfile(data));
-        });
+export const getUserProfile = (userId) => async (dispatch) => {
+    let data = await profileAPI.getUserProfile(userId)
+    dispatch(setUserProfile(data));
+
+}
+export const getStatus = (userId) => async (dispatch) => {
+    let response = await profileAPI.getStatus(userId)
+    dispatch(setStatus(response.data));
+}
+export const updateStatus = (status) => async (dispatch) => {
+    let response = await profileAPI.updateStatus(status)
+    if (response.data.resultCode === 0) {
+        dispatch(setStatus(status));
     }
-}
-export const getStatus = (userId) => (dispatch) =>  {
-        profileAPI.getStatus(userId).then(response => {
-            dispatch(setStatus(response.data));
-        });
-}
-export const updateStatus = (status) => (dispatch) => {
-        profileAPI.updateStatus(status).then(response => {
-            if(response.data.resultCode === 0) {
-                dispatch(setStatus(status));
-            }
-        });
 }
 export default profileReducer;

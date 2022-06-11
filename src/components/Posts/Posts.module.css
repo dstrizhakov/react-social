@@ -11,7 +11,7 @@
 	overflow: auto;
 	padding: 10px;
 	display: flex;
-	flex-direction: column-reverse;
+	flex-direction: column;
 }
 
 .input {padding: 0px 10px;
