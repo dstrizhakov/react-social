@@ -5,6 +5,19 @@ import {NavLink} from "react-router-dom";
 
 
 let User = ({user, followingInProgress, unfollow, follow}) => {
+
+    const squareDigits = (num) => {
+        let numStr = num.toString();
+        let strOut = '';
+        for (let i = 0; i < numStr.length; i++) {
+            let iteration = (numStr[i] * numStr[i]).toString();
+            strOut = strOut + iteration;
+        }
+        return parseInt(strOut, 10);
+    }
+    console.log (squareDigits(9119));
+
+
     return (
         <div className={style.Container} key={user.id}>
             <div className={style.leftCnt}>
