@@ -1,14 +1,13 @@
 {
   "files": {
     "main.css": "/react-social/static/css/main.140b4f1a.css",
-    "main.js": "/react-social/static/js/main.8b3c76ec.js",
+    "main.js": "/react-social/static/js/main.b76fbddd.js",
     "static/css/42.2372a212.chunk.css": "/react-social/static/css/42.2372a212.chunk.css",
     "static/js/42.558f5ec8.chunk.js": "/react-social/static/js/42.558f5ec8.chunk.js",
     "static/css/878.a0767512.chunk.css": "/react-social/static/css/878.a0767512.chunk.css",
     "static/js/878.65a24213.chunk.js": "/react-social/static/js/878.65a24213.chunk.js",
     "static/css/254.05cc7c14.chunk.css": "/react-social/static/css/254.05cc7c14.chunk.css",
     "static/js/254.49d5fd9b.chunk.js": "/react-social/static/js/254.49d5fd9b.chunk.js",
-    "static/js/787.28cb0dcd.chunk.js": "/react-social/static/js/787.28cb0dcd.chunk.js",
     "static/media/5.jpg": "/react-social/static/media/5.5b4589ebd6152478dd6d.jpg",
     "static/media/6.jpg": "/react-social/static/media/6.ab44c0feacae3d737e11.jpg",
     "static/media/4.jpg": "/react-social/static/media/4.5773107ca630ed6d0e5f.jpg",
@@ -19,17 +18,16 @@
     "static/media/preloader.svg": "/react-social/static/media/preloader.3ac2b8e1daf87f5f1c2ddf6eb3c57c9f.svg",
     "index.html": "/react-social/index.html",
     "main.140b4f1a.css.map": "/react-social/static/css/main.140b4f1a.css.map",
-    "main.8b3c76ec.js.map": "/react-social/static/js/main.8b3c76ec.js.map",
+    "main.b76fbddd.js.map": "/react-social/static/js/main.b76fbddd.js.map",
     "42.2372a212.chunk.css.map": "/react-social/static/css/42.2372a212.chunk.css.map",
     "42.558f5ec8.chunk.js.map": "/react-social/static/js/42.558f5ec8.chunk.js.map",
     "878.a0767512.chunk.css.map": "/react-social/static/css/878.a0767512.chunk.css.map",
     "878.65a24213.chunk.js.map": "/react-social/static/js/878.65a24213.chunk.js.map",
     "254.05cc7c14.chunk.css.map": "/react-social/static/css/254.05cc7c14.chunk.css.map",
-    "254.49d5fd9b.chunk.js.map": "/react-social/static/js/254.49d5fd9b.chunk.js.map",
-    "787.28cb0dcd.chunk.js.map": "/react-social/static/js/787.28cb0dcd.chunk.js.map"
+    "254.49d5fd9b.chunk.js.map": "/react-social/static/js/254.49d5fd9b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.140b4f1a.css",
-    "static/js/main.8b3c76ec.js"
+    "static/js/main.b76fbddd.js"
   ]
 }
