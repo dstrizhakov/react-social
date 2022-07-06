@@ -1,76 +1,93 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import userPhoto from "../../../assets/img/user.png";
 import ProfileStatus from "./ProfileStatusWithHooks"
+import ProfileDataForm from "./ProfileDataForm";
 
 
-const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
+const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile}) => {
+
+    let [editMode, setEditMode] = useState(false);
+
     if (!profile) {
         return <Preloader/>
     }
+
     const onMainPhotoSelected = (e) => {
-        if (e.target.files.length){
+        if (e.target.files.length) {
             savePhoto(e.target.files[0]);
         }
+    }
+
+    const onSubmit = (formData) => {
+        saveProfile(formData).then (
+            ()=> {
+                setEditMode(false);
+            }
+        );
 
     }
+
     return (
         <div>
 
             <div className={style.data}>
                 <div className={style.statusArea}>
-
                     <div className={style.avatar}>
                         <img src={profile.photos.large || userPhoto} alt="user photo"/>
                     </div>
-                    { isOwner && <input type = {"file"}  onChange={onMainPhotoSelected} />}
+                    {isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
                     <ProfileStatus status={status} updateStatus={updateStatus}/>
                 </div>
+                {editMode
+                    ? <ProfileDataForm initialValues={profile} profile={profile} isOwner={isOwner} onSubmit={onSubmit}/>
+                    : <ProfileData goToEditMode={() => {
+                        setEditMode(true)
+                    }} profile={profile} isOwner={isOwner}/>}
 
-
-                <div className={style.info}>
-                    <div className={style.name}>
-                        {profile.fullName}
-                    </div>
-
-                    <div className={style.city}>
-                        {profile.aboutMe}
-                    </div>
-                    <div>
-                        {profile.lookingForAJob ? 'Ищет работу: ' : 'Не ищет работу: '}
-                        {profile.lookingForAJobDescription ? profile.lookingForAJobDescription : '-'}
-                    </div>
-
-                    <div className={style.contacts}>
-                        <div>Контакты:</div>
-                        <a href={profile.contacts.facebook}>{profile.contacts.facebook}</a>
-                        <a href={profile.contacts.website}>{profile.contacts.website}</a>
-                        <a href={profile.contacts.vk}>{profile.contacts.vk}</a>
-                        <a href={profile.contacts.twitter}>{profile.contacts.twitter}</a>
-                        <a href={profile.contacts.instagram}>{profile.contacts.instagram}</a>
-                        <a href={profile.contacts.youtube}>{profile.contacts.youtube}</a>
-                        <a href={profile.contacts.github}>{profile.contacts.github}</a>
-                        <a href={profile.contacts.mainLink}>{profile.contacts.mainLink}</a>
-                        {/*<span>{props.profile.contacts.facebook ? props.profile.contacts.facebook : null}</span>
-                        <span>{props.profile.contacts.website ? props.profile.contacts.website : null}</span>
-                        <span>{props.profile.contacts.vk ? props.profile.contacts.vk : null}</span>
-                        <span>{props.profile.contacts.twitter ? props.profile.contacts.twitter : null}</span>
-                        <span>{props.profile.contacts.instagram ? props.profile.contacts.instagram : null}</span>
-                        <span>{props.profile.contacts.youtube ? props.profile.contacts.youtube : null}</span>
-                        <span>{props.profile.contacts.github ? props.profile.contacts.github : null}</span>
-                        <span>{props.profile.contacts.mainLink ? props.profile.contacts.mainLink : null}</span>*/}
-                    </div>
-                </div>
 
             </div>
-
-
         </div>
 
 
     );
 }
+const ProfileData = ({profile, isOwner, goToEditMode}) => {
+    return <div className={style.info}>
+        {isOwner && <div>
+            <button onClick={goToEditMode}>Edit</button>
+        </div>}
+        <div className={style.name}>
+            {profile.fullName}
+        </div>
 
+        <div className={style.city}>
+            {profile.aboutMe}
+        </div>
+        <div>
+            <b>Looking for a job</b>:{profile.lookingForAJob ? 'yes' : 'no'}
+        </div>
+        <div>
+            <b>My professional skills</b>: {profile.lookingForAJobDescription}
+        </div>
+        <div>
+            <b>About me</b>: {profile.aboutMe}
+        </div>
+
+        <div className={style.contacts}>
+            <div>
+                <b>Contacts:</b> {Object.keys(profile.contacts).map(key => {
+                return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
+            })}
+            </div>
+        </div>
+    </div>
+}
+
+
+const Contact = ({contactTitle, contactValue}) => {
+    return <div className={style.contact}><b>{contactTitle}</b>:{contactValue}</div>
+}
 
 export default ProfileInfo;

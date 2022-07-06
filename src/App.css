@@ -13,9 +13,9 @@
 
 .content {
     grid-area: c;
-    background-color: rgb(255, 255, 255);
-    border-left: 1px solid rgb(218, 198, 152);
+    background-color: white;
+/*    border-left: 1px solid rgb(218, 198, 152);
     border-right: 1px solid rgb(218, 198, 152);
     border-top: 1px solid rgb(218, 198, 152);
-    border-bottom: 1px solid rgb(218, 198, 152);
+    border-bottom: 1px solid rgb(218, 198, 152);*/
 }

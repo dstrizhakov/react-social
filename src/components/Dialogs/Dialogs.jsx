@@ -13,10 +13,8 @@ const Dialogs = (props) => {
     let MessagesElement = state.messagesData.map(message => <Message message={message.message} key={message.id}
                                                                      isMyMessage={message.isMyMessage}/>);
 
-
     let addNewMessage = (values) => {
         props.sendMessage(values.newMessageBody);
-
     }
     /*if (!props.isAuth) return <Navigate replace to="/login" />;*/
     return (
@@ -27,7 +25,6 @@ const Dialogs = (props) => {
             <div className={style.messages}>
                 {MessagesElement}
             </div>
-
             <AddMessageForm onSubmit={addNewMessage}/>
         </div>
     );

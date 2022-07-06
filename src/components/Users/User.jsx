@@ -6,7 +6,7 @@ import {NavLink} from "react-router-dom";
 
 let User = ({user, followingInProgress, unfollow, follow}) => {
 
-    const squareDigits = (num) => {
+/*    const squareDigits = (num) => {
         let numStr = num.toString();
         let strOut = '';
         for (let i = 0; i < numStr.length; i++) {
@@ -15,7 +15,7 @@ let User = ({user, followingInProgress, unfollow, follow}) => {
         }
         return parseInt(strOut, 10);
     }
-    console.log (squareDigits(9119));
+    console.log (squareDigits(9119));*/
 
 
     return (

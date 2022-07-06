@@ -21,7 +21,7 @@ let Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, portion
         {pages
             .filter(p => p >= leftPortionNumber && p <= rightPortionNumber)
             .map((p) => {
-                return <span className={currentPage === p && style.selectedPage}
+                return <span key={p} className={currentPage === p && style.selectedPage}
                 onClick={(e) => {onPageChanged(p)}}>{p}</span>
             })}
             <button disabled = {!(portionCount > portionNumber)} onClick={()=>{setPortionNumber(portionNumber +1)}}>Next</button>

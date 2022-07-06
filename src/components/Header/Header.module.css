@@ -3,17 +3,18 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: aliceblue;
-	border-left: 1px solid rgb(218, 198, 152);
-	border-right: 1px solid rgb(218, 198, 152);
 }
-.image {
-	width: 20px;
-	padding: 10px;
-	margin: 0px 10px;
-	overflow: hidden;
-	border-radius: 50%;
-	background-color: #fff;
+.logo {
+	font-size: 24px;
+	color:teal;
+	font-weight: 700;
+	padding-left: 20px;
+}
+.logo span{
+	font-size: 36px;
+	color: goldenrod;
+	font-weight: 700;
+	padding-left: 20px;
 }
 .header img {
 	width: 100%;

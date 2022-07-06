@@ -4,7 +4,9 @@ import style from './Post.module.css';
 import AddNewPostForm from "./AddNewPostForm/AddNewPostForm";
 
 const Posts = (props) => {
-    let postsElement = [...props.posts].reverse().map(p => <Post message={p.message} key={p.id} likeCount={p.likeCount}/>);
+    let postsElement = [...props.posts]
+        .reverse()
+        .map(p => <Post  message={p.message} key={p.id} likeCount={p.likeCount}/>);
 
     let onAddPost = (values) => {
         props.addPost(values.newPostText);

@@ -11,6 +11,7 @@ import LoginPage from "./components/Login/Login";
 import {connect} from "react-redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
+import {Navigate} from "react-router";
 
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
 const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
@@ -32,7 +33,9 @@ class App extends React.Component {
                 <div className='content'>
                     <Suspense fallback={<Preloader/>}>
                         <Routes>
-                            <Route path='/profile/:id' element={<ProfileContainer/>}/>
+                            <Route path="/" element={<Navigate to='/users' />} />
+                            <Route path='*' element={<h1>404 Page not found</h1>} />
+                            <Route path='/profile/*' element={<ProfileContainer/>}/>
                             <Route path='/dialogs/*' element={<DialogsContainer/>}/>
                             <Route path='/users' element={<UsersContainer/>}/>
                             <Route path='/login' element={<LoginPage/>}/>

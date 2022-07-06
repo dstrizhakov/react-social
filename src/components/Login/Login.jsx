@@ -1,19 +1,22 @@
 import React from "react";
 import style from './Login.module.css';
-import {Field, reduxForm} from "redux-form";
+import {reduxForm} from "redux-form";
 import {required} from "../../utils/validators/validators";
 import {createField, Input} from "../common/FormsControls/FormsControls";
 import {login} from "../../redux/auth-reducer";
 import {connect} from "react-redux";
 import {Navigate} from "react-router";
 
-const LoginForm = (props) => {
-return <form  onSubmit={props.handleSubmit}>
+const LoginForm = ({handleSubmit, error, captchaUrl}) => {
+return <form  onSubmit={handleSubmit}>
         {createField("Email",[required],"email", Input)}
         {createField("Password",[required],"password", Input, {type:"password"})}
         {createField(null,[],"rememberMe", Input, {type:"checkbox"}, "Remember me")}
-    { props.error && <div className={style.formSummaryError}>
-        {props.error}
+
+    {captchaUrl && <img src={captchaUrl} />}
+    {captchaUrl && createField("Antibot symbols",[required],"captcha", Input, { })}
+    { error && <div className={style.formSummaryError}>
+        {error}
     </div>
     }
         <div>
@@ -23,14 +26,14 @@ return <form  onSubmit={props.handleSubmit}>
 }
 const Login = (props) => {
     const onSubmit = (formData) =>{
-        props.login (formData.email,formData.password, formData.rememberMe);
+        props.login (formData.email,formData.password, formData.rememberMe, formData.captcha);
     }
     if(props.isAuth) {
         return <Navigate replace to="/profile/:userId" />;
     }
     return <div className={style.wrapper}>
         <h3>Login</h3>
-       <LoginReduxForm onSubmit={onSubmit}/>
+       <LoginReduxForm onSubmit={onSubmit} captchaUrl = {props.captchaUrl}/>
     </div>
 }
 const LoginReduxForm = reduxForm ({
@@ -38,6 +41,7 @@ const LoginReduxForm = reduxForm ({
 }) (LoginForm)
 
 let mapStateToProps = (state) =>({
+    captchaUrl: state.auth.captchaUrl,
     isAuth: state.auth.isAuth
 })
 export default connect(mapStateToProps, {login})(Login);
