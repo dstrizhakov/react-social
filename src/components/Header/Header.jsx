@@ -7,7 +7,7 @@ const Header = (props) => {
 	return (
 		<header className={style.header}>
 			<div className={style.logo}>
-				<span>.</span>Resowork
+				<span>.</span>ReSoNetwork
 
 			</div>
 			<div className={style.menu}>

@@ -5,10 +5,10 @@ import {Textarea} from "../../common/FormsControls/FormsControls";
 import {maxLenghtCreator, required} from "../../../utils/validators/validators";
 
 
-const maxLenght10 = maxLenghtCreator(10);
+const maxLenght300 = maxLenghtCreator(300);
 let AddNewPostForm = (props) => {
     return <form className={style.input} onSubmit={props.handleSubmit}>
-        <Field name="newPostText" component={Textarea} validate={[required, maxLenght10]}/>
+        <Field name="newPostText" component={Textarea} validate={[required, maxLenght300]}/>
         <button>Add post</button>
     </form>
 }

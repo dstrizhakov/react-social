@@ -3,7 +3,7 @@ import style from './Footer.module.css';
 
 const Footer = () => {
 	return (
-		<footer className={style.footer}>(c) Я в подвале</footer>
+		<footer className={style.footer}>(c).it-kamasutra</footer>
 	);
 }
 

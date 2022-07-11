@@ -40,8 +40,8 @@ let User = ({user, followingInProgress, unfollow, follow}) => {
             </div>
             <div className={style.rightCnt}>
                 <div>
-                    <div>{user.name}</div>
-                    <div>{user.status}</div>
+                    <div className={style.name}>{user.name}</div>
+                    <div className={style.status}>{user.status}</div>
                 </div>
             </div>
         </div>)
